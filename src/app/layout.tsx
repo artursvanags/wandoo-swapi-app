@@ -1,8 +1,10 @@
-import { cn } from "@/lib/utils"
-
+import '@/styles/globals.css'
 import { Inter as FontSans } from "next/font/google"
 import localFont from "next/font/local"
-import '@/styles/globals.css';
+
+import { cn } from "@/lib/utils"
+
+import Header from "@/components/header"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -20,14 +22,16 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
           fontHeading.variable
         )}>
-          {children}
-          </body>
+          <Header/>
+          <main className="relative">{children}</main>
+          
+      </body>
     </html>
   )
 }
