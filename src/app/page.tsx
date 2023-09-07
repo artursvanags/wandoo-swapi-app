@@ -1,7 +1,7 @@
 import { getClient } from "@/lib/client";
 import { gql } from "@apollo/client";
 
-import CharacterTable from "@/components/CharacterTable"
+import Card from "@/components/Card"
 
 const GET_PEOPLE = gql`
 query GetPeople {
