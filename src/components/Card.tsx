@@ -12,7 +12,7 @@ export default function Card({ title, data }:CardProps) {
   return (
     <div className='grid grid-cols-2 md:grid-cols-4'>
       {sortedData.map((entry) => (
-        <Link key={entry.id} className='border p-2 m-1' href={`/character/${entry.id}`}>
+        <Link key={entry.id} className='border p-2 m-1' href={`/characters/${entry.id}`}>
           {entry.name}
         </Link>
       ))}

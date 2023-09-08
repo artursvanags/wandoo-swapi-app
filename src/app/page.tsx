@@ -1,34 +1,22 @@
-import { getClient } from "@/lib/client";
-import { gql } from "@apollo/client";
+import { Icons } from "@/config/icons"
+import { Button } from "@/components/ui/button"
+import Link from "next/link";
+import { siteConfig } from "@/config/site"
 
-import Card from "@/components/Card"
-
-const GET_PEOPLE = gql`
-query GetPeople {
-  allPeople {
-    people {
-      id
-      name
-    }
-  }
-}
-`;
-
-export default async function Home() {
-  const client = getClient()
-  const { loading, data } = await client.query({query: GET_PEOPLE});
-
-  if (loading) return <p>Loading...</p>;
-  
+export default function Home() { 
   return (
-    <div className="flex min-h-screen flex-col justify-between p-2">
-      <div className="">
-        <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">Star Wars Wikipedia 1.0</h1>
-        <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+    <div className="mx-auto flex h-[calc(100vh-25vh)] flex-col justify-center container">
+      <div>
+        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl">{siteConfig.name} {siteConfig.version}</h1>
+        <p className="text-muted-foreground text-sm sm:text-xl">Made by {siteConfig.developer}</p>
+        <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 py-4">
           A comprehensive database that provides detailed information about the vast array of characters found in the Star Wars universe. 
         </p>
+        <div className="flex flex-1 items-center space-x-2">
+          <Button asChild variant="default"><Link href="/characters"><Icons.Library className="mr-2" /> View Library </Link></Button>
+          <Button asChild variant="secondary"><Link href="/about">Learn More</Link></Button>
+        </div>
       </div>
-      <Card title="A list of your Star Wars characters" data={data.allPeople.people} />
     </div>
   )
 }
