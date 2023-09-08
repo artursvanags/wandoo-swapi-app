@@ -10,7 +10,7 @@ export const { getClient } = registerApolloClient(() => {
   return new NextSSRApolloClient({
     cache: new NextSSRInMemoryCache(),
     link: new HttpLink({
-      uri: process.env.DATA_URL,
+      uri: process.env.NEXT_PUBLIC_DATA_URL,
     }),
   });
 });
