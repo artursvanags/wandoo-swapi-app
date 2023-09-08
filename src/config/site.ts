@@ -1,4 +1,4 @@
-import { SiteConfig } from "@/types/global"
+import { SiteConfig, NavItem } from "@/types/global"
 
 export const siteConfig: SiteConfig = {
   name: "Star Wars Encyclopedia",
@@ -13,3 +13,15 @@ export const siteConfig: SiteConfig = {
     "Universe"
   ],
 };
+
+
+export const NavigationConfig: NavItem[] = [
+  {
+    title: "Characters",
+    href: "/characters",
+  },
+  {
+    title: "About",
+    href: "/about",
+  },
+]
