@@ -5,6 +5,8 @@ import type { Metadata } from 'next'
 import { cn } from "@/lib/utils"
 import Header from "@/components/layout/header"
 import { siteConfig } from "@/config/site"
+import { ThemeProvider } from '@/components/global/ThemeProvider'
+
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -43,8 +45,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontSans.variable,
           fontHeading.variable
         )}>
-          <Header/>
-          <main className="relative">{children}</main>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+            <Header/>
+            <main className="relative">{children}</main>
+          </ThemeProvider>
           
       </body>
     </html>
