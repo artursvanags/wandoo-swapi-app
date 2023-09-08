@@ -3,6 +3,7 @@ Library,
 Menu,
 Sun,
 Moon,
+PanelLeftClose,
 Laptop
  } from 'lucide-react';
 
@@ -16,7 +17,8 @@ const DefaultLogo = () => (
 export const Icons = {
     logo: DefaultLogo,
     Library: Library,
-    HamburgerMenu: Menu
+    HamburgerMenu: Menu,
+    HamburgerMenuClose: PanelLeftClose
 
 };
 

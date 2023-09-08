@@ -1,9 +1,11 @@
 'use client';
 
-import { Button } from "@/components/ui/button"
-import { NavigationConfig as nav } from "@/config/site"
 import Link from "next/link"
 import { usePathname } from 'next/navigation'
+
+import { NavigationConfig as nav } from "@/config/site"
+
+import { Button } from "@/components/ui/button"
 import MobileMenu from "./mobile-menu";
 
 export default function Header() {
@@ -18,8 +20,9 @@ export default function Header() {
                 </Button>
             ))}
             </div>
-            <div className="sm:hidden block">
-                <MobileMenu menu={nav}/>
+            <div className="sm:hidden flex flex-1 items-center align-middle">
+                <MobileMenu menu={nav} path={path}/>
+                <p className="font-heading text-3xl pl-2">Main Menu</p>
             </div>
         </nav>
     )
