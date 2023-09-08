@@ -26,7 +26,7 @@ export default async function CharacterPage() {
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 pb-4">
           Select from the list below or search the Star Wars character you would like to view. 
         </p>
-      <Card title="A list of your Star Wars characters" data={data.allPeople.people} />
+      <Card data={data.allPeople.people} />
     </div>
   )
 }
