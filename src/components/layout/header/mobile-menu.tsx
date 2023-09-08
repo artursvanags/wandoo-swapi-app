@@ -53,7 +53,7 @@ export default function MobileMenu({ menu, path }: { menu: NavItem[], path: stri
             <SheetClose ref={sheetCloseRef} />
             <div className="mt-auto flex-end border-t pt-4">
                 <div className="flex flex-1 items-center justify-between">
-                    <ModeToggle sideSet="top" alignSet="start"/>
+                    <ModeToggle/>
                     <p>version {siteConfig.version}</p>  
                 </div>
             </div>
