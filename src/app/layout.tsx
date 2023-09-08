@@ -1,11 +1,10 @@
 import '@/styles/globals.css'
 import { Inter as FontSans } from "next/font/google"
 import localFont from "next/font/local"
-
+import type { Metadata } from 'next'
 import { cn } from "@/lib/utils"
-
-import Header from "@/components/header"
-
+import Header from "@/components/layout/header"
+import { siteConfig } from "@/config/site"
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -18,6 +17,22 @@ const fontHeading = localFont({
 
 interface RootLayoutProps {
   children: React.ReactNode
+}
+
+export const metadata: Metadata = {
+  title: {
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [
+    {
+      name: siteConfig.developer,
+      url: "https://github.com/artursvanags",
+    },
+  ],
+  creator: siteConfig.developer,
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
