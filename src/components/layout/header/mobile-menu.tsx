@@ -35,7 +35,7 @@ export default function MobileMenu({ menu, path }: { menu: NavItem[], path: stri
             </Button>
           </SheetTrigger>
           <SheetContent className="w-[80vw] flex flex-col" side="left">
-            <p className="font-heading text-4xl lg:text-5xl pb-2">Main Menu</p>
+            <p className="font-heading text-4xl lg:text-5xl pb-2 border-b">Main Menu</p>
             <div className=" space-y-2">
                 {menu.map((navprops, index) => (
               <Button
