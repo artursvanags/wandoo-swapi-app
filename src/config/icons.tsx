@@ -4,6 +4,10 @@ Menu,
 Sun,
 Moon,
 PanelLeftClose,
+Info,
+Globe2,
+Cake,
+Ghost,
 Laptop
  } from 'lucide-react';
 
@@ -18,7 +22,11 @@ export const Icons = {
     logo: DefaultLogo,
     Library: Library,
     HamburgerMenu: Menu,
-    HamburgerMenuClose: PanelLeftClose
+    HamburgerMenuClose: PanelLeftClose,
+    Info: Info,
+    Globe:Globe2,
+    Ghost: Ghost,
+    Cake:Cake
 
 };
 
