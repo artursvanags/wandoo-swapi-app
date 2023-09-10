@@ -59,9 +59,9 @@ export default function MobileMenu({
             ))}
           </div>
           <SheetClose ref={sheetCloseRef} />
-          <div className="mt-auto flex-end border-t pt-4">
+          <div className="mt-auto border-t pt-4">
             <div className="flex flex-1 items-center justify-between">
-              <ModeToggle />
+              <ModeToggle s="right" a="end"/>
               <Link
                 className="underline underline-offset-4"
                 href={siteConfig.links.github}
