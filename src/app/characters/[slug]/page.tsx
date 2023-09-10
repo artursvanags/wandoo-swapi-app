@@ -20,7 +20,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     if (!res || res.status === 404) return <div>No data available</div>;
 
     return (
-    <div className="mx-auto flex pt-[25vh] sm:pt-32 flex-col justify-center container">
+    <div className="mx-auto flex flex-col justify-center container">
       <PageDetails {...res}/>
       </div>
     );

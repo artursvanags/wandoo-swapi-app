@@ -34,6 +34,23 @@ fragment HomeworldDetails on Planet {
 }
 `;
 
+export const SPECIES_DETAILS = gql`
+fragment SpeciesDetails on Species {
+  averageHeight
+  averageLifespan
+  classification
+  created
+  designation
+  edited
+  eyeColors
+  hairColors
+  id
+  language
+  name
+  skinColors
+}
+`;
+
 export const FILM_DETAILS = gql`
 fragment FilmDetails on Film {
   id
@@ -57,6 +74,9 @@ query Person($personId: ID) {
     homeworld {
       ...HomeworldDetails
     }
+    species {
+      ...SpeciesDetails
+    }
     filmConnection {
       edges {
         cursor
@@ -70,6 +90,7 @@ query Person($personId: ID) {
 ${PERSON_DETAILS}
 ${HOMEWORLD_DETAILS}
 ${FILM_DETAILS}
+${SPECIES_DETAILS}
 `;
 
 export const GET_PEOPLE = gql`
