@@ -26,12 +26,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
     if (loading) return <p>Loading...</p>;
 
+    if (decodeURIComponent(params.slug) !== res.person.id) return <div>Invalid character id.</div>;
 
     // Check if the response is not found or 404
     if (!res || res.status === 404) return <div>No data available</div>;
 
     return (
-    <div className="mx-auto flex flex-col justify-center container">  
+    <div className="flex flex-col justify-center">  
       <PageDetails {...res}/>
       </div>
     );

@@ -13,7 +13,7 @@ export default function Header() {
     const path = usePathname()
     const router = useRouter()
     return (
-        <nav className="flex flex-1 items-center h-14 py-6 border-b sm:relative sticky top-0 bg-background container z-50">
+        <nav className="flex flex-1 items-center h-14 py-6 border-b sm:relative sticky top-0 px-6 bg-background z-50">
             <div className="hidden sm:block">
             {nav.map((navprops, index) => (
                 <Button key={index} asChild variant={path === navprops.href ? "secondary" : "ghost"}>

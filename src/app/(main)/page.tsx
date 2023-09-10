@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site"
 
 export default function Home() { 
   return (
-    <div className="mx-auto flex h-[calc(100vh-25vh)] flex-col justify-center container">
+    <div className="flex h-[calc(100vh-25vh)] flex-col justify-center">
       <div>
         <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl">{siteConfig.name} {siteConfig.version}</h1>
         <p className="text-muted-foreground text-sm sm:text-xl">Made by {siteConfig.developer}</p>

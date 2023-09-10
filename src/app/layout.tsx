@@ -3,9 +3,9 @@ import { Inter as FontSans } from "next/font/google"
 import localFont from "next/font/local"
 import type { Metadata } from 'next'
 import { cn } from "@/lib/utils"
-import Header from "@/components/layout/header"
 import { siteConfig } from "@/config/site"
 import { ThemeProvider } from '@/components/global/ThemeProvider'
+import Header from '@/components/layout/header'
 
 const fontSans = FontSans({
   subsets: ["latin"],
