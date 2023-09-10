@@ -27,9 +27,7 @@ interface Details {
     person: Details;
   }
 
-function Cap(i:string){
-    return i.charAt(0).toUpperCase() + i.slice(1)
-}
+
 export default function PageDetails(i: DetailsPage){
     return (
       <div>
