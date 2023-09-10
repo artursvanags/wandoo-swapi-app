@@ -65,7 +65,7 @@ export default function Card({ data }:CardProps) {
           {filteredData.length > 0 ? filteredData.map((entry) => (
             <tr key={entry.id}>
               <td>
-                <Link className="flex flex-1 justify-between px-4 py-2 border" href={`/characters/${entry.id}`}>
+                <Link className="flex flex-1 justify-between px-4 py-2 border" href={`/characters/${decodeURIComponent(entry.id)}`}>
                   {entry.name} <p className="text-muted-foreground flex items-center">{Cap(entry.gender)}<Icons.Ghost className="ml-1 w-4 h-4"/></p>
                 </Link>
               </td>
