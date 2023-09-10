@@ -1,15 +1,29 @@
 import { GET_PERSON } from "@/config/graphql";
 import { getClient } from "@/lib/client";
 import PageDetails from "./details";
+import { Metadata } from "next";
+
+
+async function getPersonData(slug: string) {
+  const client = getClient();
+  const { loading, data: res } = await client.query({
+    query: GET_PERSON,
+    variables: { personId: slug },
+  });
+  return { loading, res };
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const { res } = await getPersonData(params.slug);
+  return {
+    title: res.person.name,
+    description: `Details about ${res.person.name}`,
+  }
+}
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const client = getClient();
-
   try {
-    const { loading, data: res } = await client.query({
-      query: GET_PERSON,
-      variables: { personId: params.slug },
-    });
+    const { loading, res } = await getPersonData(params.slug);
 
     if (loading) return <p>Loading...</p>;
 

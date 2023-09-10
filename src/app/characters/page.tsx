@@ -1,7 +1,15 @@
+import { Metadata } from "next";
 import { getClient } from "@/lib/client";
 import { GET_PEOPLE } from "@/config/graphql";
 
-import Card from "@/components/Card"
+import Card from "@/components/Card";
+
+export const metadata: Metadata = {
+  title: "Characters",
+  description:
+    "A list of available Stars Wars Characters.",
+}
+
 
 export default async function CharacterPage() {
   const client = getClient()
