@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export default function ModeToggle() {
+export default function ModeToggle({s,a}: {s: any, a: any}) {
   const { setTheme } = useTheme();
   const themeOptions = [
     {
@@ -50,7 +50,7 @@ export default function ModeToggle() {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent side={"top"} align={"start"}>
+      <DropdownMenuContent side={s} align={a}>
         {themeOptions.map((option) => (
           <DropdownMenuItem
             key={option.theme}
