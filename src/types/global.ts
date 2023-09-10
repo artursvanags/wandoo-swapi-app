@@ -5,6 +5,9 @@ export type SiteConfig = {
     developer: string
     url: string
     ogImage: string
+    links: {
+      github: string,
+    }
     keywords: string[]
   }
 

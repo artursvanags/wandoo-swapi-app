@@ -1,25 +1,37 @@
-'use client';
+"use client";
 
-import * as React from "react"
-import { useTheme } from "next-themes"
+import * as React from "react";
+import { useTheme } from "next-themes";
 
-import { ThemeIcons } from "@/config/icons"
+import { ThemeIcons } from "@/config/icons";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 
 export default function ModeToggle() {
-  const { setTheme } = useTheme()
+  const { setTheme } = useTheme();
   const themeOptions = [
-    { theme: "light", icon: <ThemeIcons.Sun className="h-4 w-4 mr-2" />, label: "Light" },
-    { theme: "dark", icon: <ThemeIcons.Moon className="h-4 w-4 mr-2" />, label: "Dark" },
-    { theme: "system", icon: <ThemeIcons.System className="h-4 w-4 mr-2" />, label: "System" },
-  ]
+    {
+      theme: "light",
+      icon: <ThemeIcons.Sun className="h-4 w-4 mr-2" />,
+      label: "Light",
+    },
+    {
+      theme: "dark",
+      icon: <ThemeIcons.Moon className="h-4 w-4 mr-2" />,
+      label: "Dark",
+    },
+    {
+      theme: "system",
+      icon: <ThemeIcons.System className="h-4 w-4 mr-2" />,
+      label: "System",
+    },
+  ];
 
   return (
     <DropdownMenu>
@@ -40,11 +52,14 @@ export default function ModeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent side={"top"} align={"start"}>
         {themeOptions.map((option) => (
-          <DropdownMenuItem key={option.theme} onClick={() => setTheme(option.theme)}>
+          <DropdownMenuItem
+            key={option.theme}
+            onClick={() => setTheme(option.theme)}
+          >
             {option.icon} {option.label}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }
