@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { getClient } from "@/lib/client";
 import { GET_PEOPLE } from "@/config/graphql";
 
-import Card from "@/components/Card";
+import Table from "@/components/Table";
 
 export const metadata: Metadata = {
   title: "Characters",
@@ -23,7 +23,7 @@ export default async function CharacterPage() {
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 pb-12">
           Select from the list below or search the Star Wars character you would like to view. 
         </p>
-      <Card data={data.allPeople.people} />
+      <Table data={data.allPeople.people} />
     </div>
   )
 }

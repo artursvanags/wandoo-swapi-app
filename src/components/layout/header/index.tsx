@@ -15,6 +15,7 @@ export default function Header() {
 
     return (
         <nav className="flex flex-1 items-center h-14 py-6 border-b container sm:relative sticky top-0 px-6 bg-background z-50">
+            
             <div className="hidden sm:block">
             {nav.map((navprops, index) => (
                 <Button key={index} asChild variant={path === navprops.href ? "secondary" : "ghost"}>
@@ -22,14 +23,17 @@ export default function Header() {
                 </Button>
             ))}
             </div>
+            
             <div className="sm:hidden flex flex-1 items-center align-middle">
                         <MobileMenu menu={nav} path={path}/>
                         <p className="font-heading text-2xl pl-2">Main Menu</p>
             </div>
+
             {path.includes('/characters/') && (
             <div>
                 <Button variant="secondary" onClick={() => router.back()}> <Icons.Left className="mr-2 w-6 h-6"/>Go Back</Button>
             </div>)}
+
         </nav>
     )
 }

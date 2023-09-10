@@ -8,11 +8,11 @@ import { Cap, cn } from '@/lib/utils';
 import { Icons,TableIcons } from '@/config/icons';
 import { Button } from '@/components/ui/button';
 
-interface CardProps {
+interface TableProps {
   data: Array<{ id: string; name: string, gender:string }>;
 }
 
-export default function Card({ data }:CardProps) {
+export default function Table({ data }:TableProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   
