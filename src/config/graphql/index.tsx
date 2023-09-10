@@ -121,6 +121,7 @@ query GetPeople {
     people {
       id
       name
+      gender
     }
   }
 }
