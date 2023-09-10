@@ -39,19 +39,16 @@ export interface Details {
         terrains: string;
     };
     filmConnection: {
-        edges: {
-            cursor: string;
-            node: {
-                id: string;
-                title: string;
-                created: string;
-                edited: string;
-                director: string;
-                producers: string;
-                releaseDate: string;
-                episodeID: string;
-                openingCrawl: string;
-            };
+        films: {
+            id: string;
+            title: string;
+            created: string;
+            edited: string;
+            director: string;
+            producers: string;
+            releaseDate: string;
+            episodeID: string;
+            openingCrawl: string;
         }[];
     };
     vehicleConnection: {

@@ -45,14 +45,14 @@ export default function PageDetails(i: DetailsPage){
                 </div>
             </div>
             <div className=" space-y-10 pb-12">               
-                {i.person.filmConnection.edges && (
+                {i.person.filmConnection.films && (
                     <div>
                         <h2 className="font-heading text-2xl sm:text-4xl pb-2">Film appearances</h2>
                         <ul>
-                        {i.person.filmConnection.edges.map((edge, index) => (
+                        {i.person.filmConnection.films.map((films, index) => (
                             <li key={index}>
-                                <InfoDialog title={edge.node.title} content={Object.entries(edge.node).filter(([key]) => key !== 'created' && key !== 'edited' && key !== '__typename' && key !== 'id').map(([key, value]) => <p key={key}>{`${key}: ${value}`}</p>)} >
-                                    <p className="text-muted-foreground sm:text-xl flex items-center underline py-2">- {edge.node.title}</p>
+                                <InfoDialog title={films.title} content={Object.entries(films).filter(([key]) => key !== 'created' && key !== 'edited' && key !== '__typename' && key !== 'id').map(([key, value]) => <p key={key}>{`${key}: ${value}`}</p>)} >
+                                    <p className="text-muted-foreground sm:text-xl flex items-center underline py-2">- {films.title}</p>
                                 </InfoDialog>
                             </li>
                         ))}
@@ -60,7 +60,7 @@ export default function PageDetails(i: DetailsPage){
                     </div>
                 )}
 
-                {i.person.vehicleConnection.vehicles && (
+                {i.person.vehicleConnection.vehicles && i.person.vehicleConnection.vehicles.length > 0 && (
                     <div>
                         <h2 className="font-heading text-2xl sm:text-4xl pb-2">Vehicles</h2>
                         <ul>

@@ -97,11 +97,8 @@ query Person($personId: ID) {
       ...SpeciesDetails
     }
     filmConnection {
-      edges {
-        cursor
-        node {
-          ...FilmDetails
-        }
+      films {
+        ...FilmDetails
       }
     }
     vehicleConnection {
