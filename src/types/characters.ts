@@ -54,4 +54,22 @@ export interface Details {
             };
         }[];
     };
+    vehicleConnection: {
+        vehicles: {
+            cargoCapacity: string;
+            consumables: string;
+            costInCredits: string;
+            created: string;
+            crew: string;
+            edited: string;
+            id: string;
+            length: string;
+            manufacturers: string;
+            maxAtmospheringSpeed: string;
+            model: string;
+            name: string;
+            passengers: string;
+            vehicleClass: string;
+        }[];
+    };
 }

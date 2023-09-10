@@ -66,6 +66,25 @@ fragment FilmDetails on Film {
 }
 `;
 
+export const VEHICLE_DETAILS = gql`
+fragment VehicleDetails on Vehicle {
+  cargoCapacity
+  consumables
+  costInCredits
+  created
+  crew
+  edited
+  id
+  length
+  manufacturers
+  maxAtmospheringSpeed
+  model
+  name
+  passengers
+  vehicleClass
+}
+`;
+
 // Main queries
 export const GET_PERSON = gql`
 query Person($personId: ID) {
@@ -85,12 +104,18 @@ query Person($personId: ID) {
         }
       }
     }
+    vehicleConnection {
+      vehicles {
+        ...VehicleDetails
+      }
+    }
   }
 }
 ${PERSON_DETAILS}
 ${HOMEWORLD_DETAILS}
 ${FILM_DETAILS}
 ${SPECIES_DETAILS}
+${VEHICLE_DETAILS}
 `;
 
 export const GET_PEOPLE = gql`

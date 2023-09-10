@@ -8,6 +8,8 @@ Info,
 Globe2,
 Cake,
 Ghost,
+Dog,
+ChevronLeft,
 Laptop
  } from 'lucide-react';
 
@@ -26,7 +28,9 @@ export const Icons = {
     Info: Info,
     Globe:Globe2,
     Ghost: Ghost,
-    Cake:Cake
+    Cake:Cake,
+    Dog:Dog,
+    Left:ChevronLeft
 
 };
 
