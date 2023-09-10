@@ -10,7 +10,10 @@ Cake,
 Ghost,
 Dog,
 ChevronLeft,
-Laptop
+Laptop,
+ArrowUp,
+ArrowDown,
+ListFilter
  } from 'lucide-react';
 
 
@@ -32,6 +35,12 @@ export const Icons = {
     Dog:Dog,
     Left:ChevronLeft
 
+};
+
+export const TableIcons = {
+    Asc: ArrowUp,
+    Desc: ArrowDown,
+    Default: ListFilter
 };
 
 export const ThemeIcons = {
