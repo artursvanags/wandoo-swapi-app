@@ -26,7 +26,7 @@ export default function Table({ data }: TableProps) {
   });
 
   const filteredData = sortedData.filter((entry) =>
-    entry.name.toLowerCase().includes(searchTerm.toLowerCase())
+    entry.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   const handleSearchChange = useCallback(
@@ -40,7 +40,7 @@ export default function Table({ data }: TableProps) {
       }
       router.push(`?${newSearchParams.toString()}`);
     },
-    [searchParams, router]
+    [searchParams, router],
   );
 
   return (
@@ -51,25 +51,25 @@ export default function Table({ data }: TableProps) {
         value={searchTerm}
         onChange={handleSearchChange}
       />
-      <table className="table-auto w-full">
+      <table className="w-full table-auto">
         <thead>
           <tr>
             <th>
               <Button
                 variant="secondary"
                 className={cn(
-                  " font-bold w-full justify-start rounded-none border"
+                  " w-full justify-start rounded-none border font-bold",
                 )}
                 onClick={() =>
                   setSortOrder(sortOrder === "asc" ? "desc" : "asc")
                 }
               >
                 {sortOrder === "asc" ? (
-                  <TableIcons.Asc className="h-4 w-4 mr-2" />
+                  <TableIcons.Asc className="mr-2 h-4 w-4" />
                 ) : sortOrder === "desc" ? (
-                  <TableIcons.Desc className="h-4 w-4 mr-2" />
+                  <TableIcons.Desc className="mr-2 h-4 w-4" />
                 ) : (
-                  <TableIcons.Default className="h-4 w-4 mr-2" />
+                  <TableIcons.Default className="mr-2 h-4 w-4" />
                 )}
                 Name
               </Button>
@@ -82,13 +82,13 @@ export default function Table({ data }: TableProps) {
               <tr key={entry.id}>
                 <td>
                   <Link
-                    className="flex flex-1 justify-between px-4 py-2 border"
+                    className="flex flex-1 justify-between border px-4 py-2"
                     href={`/characters/${decodeURIComponent(entry.id)}`}
                   >
                     {entry.name}{" "}
                     <p className="text-muted-foreground flex items-center">
                       {Cap(entry.gender)}
-                      <Icons.Ghost className="ml-1 w-4 h-4" />
+                      <Icons.Ghost className="ml-1 h-4 w-4" />
                     </p>
                   </Link>
                 </td>

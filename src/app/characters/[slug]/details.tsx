@@ -14,18 +14,18 @@ export default function PageDetails(i: DetailsPage) {
     <div>
       {i && (
         <>
-          <div className="py-24 sm:pt-32 flex flex-col justify-center">
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl border-b">
+          <div className="flex flex-col justify-center py-24 sm:pt-32">
+            <h1 className="font-heading border-b text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               {i.person.name}
             </h1>
 
-            <div className="flex flex-wrap pt-2 pb-8 gap-4">
-              <p className="text-muted-foreground sm:text-xl flex items-center">
-                <Icons.Ghost className="mr-1 w-4 h-4" />
+            <div className="flex flex-wrap gap-4 pb-8 pt-2">
+              <p className="text-muted-foreground flex items-center sm:text-xl">
+                <Icons.Ghost className="mr-1 h-4 w-4" />
                 {Cap(i.person.gender)}
               </p>
-              <p className="text-muted-foreground sm:text-xl flex items-center">
-                <Icons.Cake className="mr-1 w-4 h-4" />
+              <p className="text-muted-foreground flex items-center sm:text-xl">
+                <Icons.Cake className="mr-1 h-4 w-4" />
                 {i.person.birthYear !== "unknown"
                   ? "Born in " + i.person.birthYear
                   : "Unknown birth year"}
@@ -39,14 +39,14 @@ export default function PageDetails(i: DetailsPage) {
                         key !== "created" &&
                         key !== "edited" &&
                         key !== "__typename" &&
-                        key !== "id"
+                        key !== "id",
                     )
                     .map(([key, value]) => (
                       <p key={key}>{`${key}: ${value}`}</p>
                     ))}
                 >
-                  <p className="text-muted-foreground sm:text-xl flex items-center underline underline-offset-4">
-                    <Icons.Globe className="mr-1 w-4 h-4" />
+                  <p className="text-muted-foreground flex items-center underline underline-offset-4 sm:text-xl">
+                    <Icons.Globe className="mr-1 h-4 w-4" />
                     {Cap(i.person.homeworld.name)}
                   </p>
                 </InfoDialog>
@@ -60,23 +60,23 @@ export default function PageDetails(i: DetailsPage) {
                         key !== "created" &&
                         key !== "edited" &&
                         key !== "__typename" &&
-                        key !== "id"
+                        key !== "id",
                     )
                     .map(([key, value]) => (
                       <p key={key}>{`${key}: ${value}`}</p>
                     ))}
                 >
-                  <p className="text-muted-foreground sm:text-xl flex items-center underline underline-offset-4">
-                    <Icons.Dog className="mr-1 w-4 h-4" />
+                  <p className="text-muted-foreground flex items-center underline underline-offset-4 sm:text-xl">
+                    <Icons.Dog className="mr-1 h-4 w-4" />
                     {Cap(i.person.species.name)}
                   </p>
                 </InfoDialog>
               )}
             </div>
 
-            <div className="border p-4 rounded">
-              <h2 className="font-heading text-xl sm:text-xl pb-2 mb-2 flex items-center border-b">
-                <Icons.Info className="mr-2 w-4 h-4" />
+            <div className="rounded border p-4">
+              <h2 className="font-heading mb-2 flex items-center border-b pb-2 text-xl sm:text-xl">
+                <Icons.Info className="mr-2 h-4 w-4" />
                 Main description
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-1">
@@ -99,7 +99,7 @@ export default function PageDetails(i: DetailsPage) {
           <div className=" space-y-10 pb-12">
             {i.person.filmConnection.films && (
               <div>
-                <h2 className="font-heading text-2xl sm:text-4xl pb-2">
+                <h2 className="font-heading pb-2 text-2xl sm:text-4xl">
                   Film appearances
                 </h2>
                 <ul>
@@ -113,13 +113,13 @@ export default function PageDetails(i: DetailsPage) {
                               key !== "created" &&
                               key !== "edited" &&
                               key !== "__typename" &&
-                              key !== "id"
+                              key !== "id",
                           )
                           .map(([key, value]) => (
                             <p key={key}>{`${key}: ${value}`}</p>
                           ))}
                       >
-                        <p className="text-muted-foreground sm:text-xl flex items-center underline underline-offset-4 py-2">
+                        <p className="text-muted-foreground flex items-center py-2 underline underline-offset-4 sm:text-xl">
                           - {films.title}
                         </p>
                       </InfoDialog>
@@ -132,7 +132,7 @@ export default function PageDetails(i: DetailsPage) {
             {i.person.vehicleConnection.vehicles &&
               i.person.vehicleConnection.vehicles.length > 0 && (
                 <div>
-                  <h2 className="font-heading text-2xl sm:text-4xl pb-2">
+                  <h2 className="font-heading pb-2 text-2xl sm:text-4xl">
                     Vehicles
                   </h2>
                   <ul>
@@ -147,18 +147,18 @@ export default function PageDetails(i: DetailsPage) {
                                   key !== "created" &&
                                   key !== "edited" &&
                                   key !== "__typename" &&
-                                  key !== "id"
+                                  key !== "id",
                               )
                               .map(([key, value]) => (
                                 <p key={key}>{`${key}: ${value}`}</p>
                               ))}
                           >
-                            <p className="text-muted-foreground sm:text-xl flex items-center underline underline-offset-4">
+                            <p className="text-muted-foreground flex items-center underline underline-offset-4 sm:text-xl">
                               - {vehicle.name}
                             </p>
                           </InfoDialog>
                         </li>
-                      )
+                      ),
                     )}
                   </ul>
                 </div>

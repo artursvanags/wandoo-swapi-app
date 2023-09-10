@@ -13,22 +13,22 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export default function ModeToggle({s,a}: {s: any, a: any}) {
+export default function ModeToggle({ s, a }: { s: any; a: any }) {
   const { setTheme } = useTheme();
   const themeOptions = [
     {
       theme: "light",
-      icon: <ThemeIcons.Sun className="h-4 w-4 mr-2" />,
+      icon: <ThemeIcons.Sun className="mr-2 h-4 w-4" />,
       label: "Light",
     },
     {
       theme: "dark",
-      icon: <ThemeIcons.Moon className="h-4 w-4 mr-2" />,
+      icon: <ThemeIcons.Moon className="mr-2 h-4 w-4" />,
       label: "Dark",
     },
     {
       theme: "system",
-      icon: <ThemeIcons.System className="h-4 w-4 mr-2" />,
+      icon: <ThemeIcons.System className="mr-2 h-4 w-4" />,
       label: "System",
     },
   ];
@@ -43,7 +43,7 @@ export default function ModeToggle({s,a}: {s: any, a: any}) {
                 <ThemeIcons.Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               )}
               {option.theme === "dark" && (
-                <ThemeIcons.Moon className="h-4 w-4 absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <ThemeIcons.Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               )}
             </React.Fragment>
           ))}

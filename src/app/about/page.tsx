@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="flex py-24 sm:pt-32 flex-col justify-center">
-      <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl pb-4 border-b">
+    <div className="flex flex-col justify-center py-24 sm:pt-32">
+      <h1 className="font-heading border-b pb-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
         About this project
       </h1>
-      <div className="text-muted-foreground space-y-8 leading-7 mt-6">
+      <div className="text-muted-foreground mt-6 space-y-8 leading-7">
         <p>
           The Star Wars Character Encyclopedia is a mobile-first web application
           that allows users to explore detailed information about characters

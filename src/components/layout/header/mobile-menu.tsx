@@ -37,11 +37,11 @@ export default function MobileMenu({
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon">
-            <Icons.HamburgerMenu className="w-8 h-8" />
+            <Icons.HamburgerMenu className="h-8 w-8" />
           </Button>
         </SheetTrigger>
-        <SheetContent className="w-[80vw] flex flex-col" side="left">
-          <p className="font-heading text-4xl lg:text-5xl pb-2 border-b">
+        <SheetContent className="flex w-[80vw] flex-col" side="left">
+          <p className="font-heading border-b pb-2 text-4xl lg:text-5xl">
             Main Menu
           </p>
           <div className=" space-y-2">
@@ -61,7 +61,7 @@ export default function MobileMenu({
           <SheetClose ref={sheetCloseRef} />
           <div className="mt-auto border-t pt-4">
             <div className="flex flex-1 items-center justify-between">
-              <ModeToggle s="right" a="end"/>
+              <ModeToggle s="right" a="end" />
               <Link
                 className="underline underline-offset-4"
                 href={siteConfig.links.github}
