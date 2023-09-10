@@ -15,8 +15,8 @@ export default function PageDetails(i: DetailsPage){
         <div>
       {i && (
         <>
-        <div className="pt-32 pb-12 flex flex-col justify-center">
-                <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl border-b pb-2">{i.person.name}</h1>
+        <div className="py-24 sm:pt-32 flex flex-col justify-center">
+        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl border-b">{i.person.name}</h1>
                 
                 <div className="flex flex-wrap pt-2 pb-8 gap-4">
                     <p className="text-muted-foreground sm:text-xl flex items-center"><Icons.Ghost className="mr-1 w-4 h-4"/>{Cap(i.person.gender)}</p>
