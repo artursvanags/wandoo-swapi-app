@@ -1,7 +1,6 @@
 import { GET_PERSON } from "@/config/graphql";
 import { getClient } from "@/lib/client";
 import PageDetails from "./details";
-import { atob } from 'abab';
 
 async function getPersonData(slug: string) {
   const client = getClient();
