@@ -43,7 +43,7 @@ To get started with the project, follow these steps:
 ## Features
 
 - **Mobile-first design:** The application is designed with a mobile-first approach, ensuring optimal user experience on mobile devices.
-- **Built-in error handling:** The application has robust error handling mechanisms in place to ensure smooth user experience.
+- **Built-in error handling:** The application has robust error handling mechanisms in place to ensure smooth user experience. You can see this in action if the `NEXT_PUBLIC_DATA_URL` in the `.env` file is not correct, or if the slug in the characters page is not correct.
 - **Detailed Star Wars Characters Information:** The application provides comprehensive information about Star Wars characters, including their species, homeworlds, and other relevant details.
 - **Advanced Search & Filtering:** Users can search for characters by name and use a filter option to sort characters alphabetically. The application also supports slug parameters for easier sharing of search results.
 - **UI State Management:** The application uses Shadcn and Redux for managing the UI state, providing a responsive and seamless user experience.
