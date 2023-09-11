@@ -35,28 +35,40 @@ type handleErrorsProp = {
 
 function handleErrors({ error, res, params }: handleErrorsProp) {
   if (error || !res || res.status === 404) {
-    const errorMessage = error ? error.message : "No Data Available";
-    return (
-      <div className="mt-8">
-        <Alert variant={error ? "destructive" : "default"}>
-          <AlertIcons.Error className="h-4 w-4" />
-          <AlertTitle>{error ? "Error" : "Info"}</AlertTitle>
-          <AlertDescription>{errorMessage}</AlertDescription>
-        </Alert>
-      </div>
-    );
+      const errorMessage = error ? error.message : "No Data Available";
+      return (
+          <div className="mt-8">
+              <Alert variant={error ? "destructive" : "default"}>
+                  <AlertIcons.Error className="h-4 w-4" />
+                  <AlertTitle>{error ? "Error" : "Info"}</AlertTitle>
+                  <AlertDescription>{errorMessage}</AlertDescription>
+              </Alert>
+          </div>
+      );
   }
 
-  if (params.slug !== encodeURIComponent(res.person.id)) {
-    return (
-      <div className="mt-8">
-        <Alert variant="destructive">
-          <AlertIcons.Info className="h-4 w-4" />
-          <AlertTitle>Error</AlertTitle>
-          <AlertDescription>Slug does not match person ID</AlertDescription>
-        </Alert>
-      </div>
-    );
+  if (res.person && params.slug !== encodeURIComponent(res.person.id)) {
+      return (
+          <div className="mt-8">
+              <Alert variant="destructive">
+                  <AlertIcons.Info className="h-4 w-4" />
+                  <AlertTitle>Error</AlertTitle>
+                  <AlertDescription>Slug does not match person ID</AlertDescription>
+              </Alert>
+          </div>
+      );
+  }
+
+  if (!res.person) {
+      return (
+          <div className="mt-8">
+              <Alert variant="destructive">
+                  <AlertIcons.Info className="h-4 w-4" />
+                  <AlertTitle>Error</AlertTitle>
+                  <AlertDescription>No person data available.</AlertDescription>
+              </Alert>
+          </div>
+      );
   }
 
   return null;
