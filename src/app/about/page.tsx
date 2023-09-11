@@ -47,7 +47,7 @@ export default function AboutPage() {
         </p>
         <p>
           The author of this project is{" "}
-          <span className="font-bold">{siteConfig.developer}</span> & the
+          <span className="font-bold">{siteConfig.developer}</span> &apos; the
           repository is available on{" "}
           <Link
             className=" font-bold underline underline-offset-4"
