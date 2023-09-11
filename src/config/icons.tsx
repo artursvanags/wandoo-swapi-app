@@ -14,6 +14,7 @@ import {
   ArrowUp,
   ArrowDown,
   ListFilter,
+  XOctagon
 } from "lucide-react";
 
 import Image from "next/image";
@@ -34,6 +35,11 @@ export const Icons = {
   Dog: Dog,
   Left: ChevronLeft,
 };
+
+export const AlertIcons = {
+  Info: Info,
+  Error: XOctagon
+}
 
 export const TableIcons = {
   Asc: ArrowUp,

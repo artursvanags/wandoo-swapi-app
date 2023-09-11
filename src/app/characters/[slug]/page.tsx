@@ -1,23 +1,69 @@
 import { GET_PERSON } from "@/config/graphql";
 import { getClient } from "@/lib/client";
 import PageDetails from "./details";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
+import { AlertIcons } from "@/config/icons";
 
 async function getPersonData(slug: string) {
   const client = getClient();
-  const encodeId = decodeURIComponent(slug);
-  const { loading, data: res } = await client.query({
-    query: GET_PERSON,
-    variables: { personId: encodeId },
-  });
-  return { loading, res };
+  const id = decodeURIComponent(slug);
+  
+  try {
+    const { data: res, loading, error } = await client.query({
+      query: GET_PERSON,
+      errorPolicy: "all",
+      variables: { personId: id },
+    });
+
+    return { res, loading, error };
+  } catch (error) {
+    return { error };
+  }
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const { res } = await getPersonData(params.slug);
+type handleErrorsProp = {
+  error: any,
+  res: any,
+  params: {
+    slug: string
+  }
+}
+
+function handleErrors({error, res, params}:handleErrorsProp) {
+  if (error || !res || res.status === 404) {
+    const errorMessage = error ? error.message : 'No Data Available';
+    return (
+      <div className="mt-8">
+        <Alert variant={error ? 'destructive' : 'default'}>
+          <AlertIcons.Error className="h-4 w-4" />
+          <AlertTitle>{error ? 'Error' : 'Info'}</AlertTitle>
+          <AlertDescription>{errorMessage}</AlertDescription>
+        </Alert>
+      </div>
+    );
+  }
+
+  if (params.slug !== encodeURIComponent(res.person.id)) {
+    return (
+      <div className="mt-8">
+        <Alert variant='destructive'>
+          <AlertIcons.Info className="h-4 w-4" />
+          <AlertTitle>Error</AlertTitle>
+          <AlertDescription>Slug does not match person ID</AlertDescription>
+        </Alert>
+      </div>
+    );
+  }
+
+  return null;
+}
+
+export async function generateMetadata({params}: {params: { slug: string }}) {
+  const { res, error } = await getPersonData(params.slug);
+  const errorComponent = handleErrors({error, res, params});
+
+  if (errorComponent) return { title: "Error", description: "Error while generating metadata." };
+
   return {
     title: res.person.name,
     description: `Details about ${res.person.name}`,
@@ -26,15 +72,10 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: { slug: string } }) {
   try {
-    const { loading, res } = await getPersonData(params.slug);
+    const { res, error } = await getPersonData(params.slug);
 
-    if (loading) return <p>Loading...</p>;
-
-    if (decodeURIComponent(params.slug) !== res.person.id)
-      return <div>Invalid character id.</div>;
-
-    // Check if the response is not found or 404
-    if (!res || res.status === 404) return <div>No data available</div>;
+    const errorComponent = handleErrors({error, res, params});
+    if (errorComponent) return errorComponent;
 
     return (
       <div className="flex flex-col justify-center">
