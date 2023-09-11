@@ -6,7 +6,6 @@ export const siteConfig: SiteConfig = {
   description:"A comprehensive Star Wars encyclopedia about characters, mostly.",
   developer: "Arturs Vanags",
   url: process.env.NEXT_PUBLIC_SITE_URL as string,
-  ogImage: "#",
   links: {
     github: "https://github.com/artursvanags/wandoo-swapi-app",
   },

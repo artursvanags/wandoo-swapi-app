@@ -4,7 +4,6 @@ export type SiteConfig = {
     description: string
     developer: string
     url: string
-    ogImage: string
     links: {
       github: string,
     }
