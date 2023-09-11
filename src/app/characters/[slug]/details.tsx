@@ -75,7 +75,7 @@ export default function PageDetails(i: DetailsPage) {
             </div>
 
             <div className="rounded border p-4">
-              <h2 className="mb-2 flex items-center border-b pb-2 font-heading text-xl sm:text-xl">
+              <h2 className="mb-2 flex items-center border-b pb-2 font-heading text-xl sm:text-xl md:text-2xl lg:text-3xl">
                 <Icons.Info className="mr-2 h-4 w-4" />
                 Main description
               </h2>
@@ -132,7 +132,7 @@ export default function PageDetails(i: DetailsPage) {
             {i.person.vehicleConnection.vehicles &&
               i.person.vehicleConnection.vehicles.length > 0 && (
                 <div>
-                  <h2 className="pb-2 font-heading text-2xl sm:text-4xl">
+                  <h2 className="pb-2 font-heading text-xl sm:text-xl md:text-2xl lg:text-3xl">
                     Vehicles
                   </h2>
                   <ul>
@@ -153,7 +153,7 @@ export default function PageDetails(i: DetailsPage) {
                                 <p key={key}>{`${key}: ${value}`}</p>
                               ))}
                           >
-                            <p className="flex items-center text-muted-foreground underline underline-offset-4 sm:text-xl">
+                            <p className="flex items-center py-2 text-muted-foreground underline underline-offset-4 sm:text-xl">
                               - {vehicle.name}
                             </p>
                           </InfoDialog>
