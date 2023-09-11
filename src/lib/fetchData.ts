@@ -1,5 +1,5 @@
 import { getClient } from "@/lib/client";
-import { GET_PERSON, GET_PEOPLE } from "@/config/graphql";
+import { GET_PERSON, GET_PEOPLE } from "@/lib/graphql";
 
 export async function getPersonData(slug: string) {
   const client = getClient();
