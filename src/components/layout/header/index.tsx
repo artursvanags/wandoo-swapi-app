@@ -39,7 +39,6 @@ export default function Header() {
       {path.includes("/characters/") && (
         <div className="sm:hidden">
           <Button variant="secondary" onClick={() => router.back()}>
-            {" "}
             <Icons.Left className="mr-2 h-6 w-6" />
             Go Back
           </Button>

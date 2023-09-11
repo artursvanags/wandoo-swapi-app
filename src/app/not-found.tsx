@@ -1,7 +1,9 @@
+"use client";
+
 import { Button } from "@/components/ui/button"
 import { Icons } from "@/config/icons"
 import { Metadata } from "next"
-import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 export const metadata: Metadata = {
   title: "404",
@@ -9,6 +11,7 @@ export const metadata: Metadata = {
 }
 
 export default function NotFound() {
+  const router = useRouter();
   return (
 <div className="container px-6 flex flex-col justify-center items-center py-24 sm:pt-32">
         <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
@@ -18,10 +21,8 @@ export default function NotFound() {
           The page does not exist or is not found.
         </p>
         <div>
-          <Button asChild variant="default">
-            <Link href="/characters">
-              <Icons.Left className="mr-2 w-4 h-4"/>Go back
-            </Link>
+        <Button variant="default" onClick={() => router.back()}>
+          <Icons.Left className="mr-2 w-4 h-4"/>Go back
           </Button>
         </div>
       </div>
