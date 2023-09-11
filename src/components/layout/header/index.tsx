@@ -15,8 +15,8 @@ export default function Header() {
 
   return (
     <nav className="bg-background container sticky top-0 z-50 flex h-14 flex-1 items-center border-b px-6 py-6 sm:relative">
-      <div className="hidden flex-1 items-center justify-between space-x-2 sm:flex">
-        <div>
+      <div className="hidden flex-1 items-center justify-between sm:flex">
+        <div className="space-x-2">
           {nav.map((navprops, index) => (
             <Button
               key={index}
