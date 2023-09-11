@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import MobileMenu from "./mobile-menu";
 import { Icons } from "@/config/icons";
 import ModeToggle from "@/components/global/ThemeToggleButton";
+
 export default function Header() {
   const path = usePathname();
   const router = useRouter();
