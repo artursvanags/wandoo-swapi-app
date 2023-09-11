@@ -83,7 +83,7 @@ export default function Table({ data }: TableProps) {
                 <td>
                   <Link
                     className="flex flex-1 justify-between border px-4 py-2"
-                    href={`/characters/${decodeURIComponent(entry.id)}`}
+                    href={`/characters/${encodeURIComponent(entry.id)}`}
                   >
                     {entry.name}{" "}
                     <p className="text-muted-foreground flex items-center">
