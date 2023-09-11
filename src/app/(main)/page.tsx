@@ -20,7 +20,7 @@ export default function Home() {
         <div className="flex flex-1 items-center space-x-2">
           <Button asChild variant="default">
             <Link href="/characters">
-              <Icons.Library className="mr-2" /> View Library{" "}
+              <Icons.Library className="mr-2" /> View Library
             </Link>
           </Button>
           <Button asChild variant="secondary">
