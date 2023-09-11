@@ -38,7 +38,7 @@ export default function AboutPage() {
           in Next.js, React, GraphQL, Apollo Client, and Tailwind CSS.
         </p>
         <p>
-          The project's GitHub repository contains a clear README file with
+          The projects GitHub repository contains a clear README file with
           instructions on how to run the application locally, and the code is
           organized and structured for easy maintenance. Overall, the Star Wars
           Character Encyclopedia is a comprehensive and user-friendly web
