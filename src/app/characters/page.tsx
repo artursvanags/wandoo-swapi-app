@@ -1,8 +1,5 @@
 import { Metadata } from "next";
-import { getClient } from "@/lib/client";
-import { GET_PEOPLE } from "@/config/graphql";
-import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
-import { AlertIcons } from "@/config/icons";
+import Table from "@/components/characters/table";
 
 import Table from "@/components/Table";
 
