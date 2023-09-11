@@ -86,7 +86,7 @@ export default function Table({ data }: TableProps) {
                     href={`/characters/${encodeURIComponent(entry.id)}`}
                   >
                     {entry.name}{" "}
-                    <p className="text-muted-foreground flex items-center">
+                    <p className="flex items-center text-muted-foreground">
                       {Cap(entry.gender)}
                       <Icons.Ghost className="ml-1 h-4 w-4" />
                     </p>

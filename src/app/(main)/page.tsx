@@ -10,10 +10,10 @@ export default function Home() {
         <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
           {siteConfig.name} {siteConfig.version}
         </h1>
-        <p className="text-muted-foreground text-sm sm:text-xl">
+        <p className="text-sm text-muted-foreground sm:text-xl">
           Made by {siteConfig.developer}
         </p>
-        <p className="text-muted-foreground max-w-[42rem] py-4 leading-normal sm:text-xl sm:leading-8">
+        <p className="max-w-[42rem] py-4 leading-normal text-muted-foreground sm:text-xl sm:leading-8">
           A comprehensive database that provides detailed information about the
           vast array of characters found in the Star Wars universe.
         </p>
